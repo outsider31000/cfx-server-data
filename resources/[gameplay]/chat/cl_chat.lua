@@ -228,7 +228,7 @@ local kvpEntry = GetResourceKvpString('hideState')
 local chatHideState = kvpEntry and tonumber(kvpEntry) or CHAT_HIDE_STATES.SHOW_WHEN_ACTIVE
 local isFirstHide = true
 
-if not isRDR then
+
   if RegisterKeyMapping then
     RegisterKeyMapping('toggleChat', 'Toggle chat', 'keyboard', 'l')
   end
@@ -246,7 +246,6 @@ if not isRDR then
 
     SetResourceKvp('hideState', tostring(chatHideState))
   end, false)
-end
 
 Citizen.CreateThread(function()
   SetTextChatEnabled(false)
